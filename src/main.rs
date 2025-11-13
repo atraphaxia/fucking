@@ -1,3 +1,5 @@
+use std::path::PathBuf;
+
 use clap::{Parser, Subcommand};
 use jiff::civil::DateTime;
 
@@ -14,6 +16,11 @@ struct Cli
 #[derive(Subcommand)]
 enum Commands
 {
+	Initialize
+	{
+		path: PathBuf
+	},
+
 	Schedule
 	{
 		#[command(subcommand)]
