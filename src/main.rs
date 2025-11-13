@@ -14,6 +14,19 @@ struct Cli
 enum Commands
 {
 	Schedule
+	{
+		#[command(subcommand)]
+		command: ScheduleCommands
+	}
+}
+
+#[derive(Subcommand)]
+enum ScheduleCommands
+{
+	Add
+	{
+		name: String
+	}
 }
 
 
