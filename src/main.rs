@@ -1,4 +1,5 @@
 use clap::{Parser, Subcommand};
+use jiff::civil::DateTime;
 
 
 
@@ -25,7 +26,9 @@ enum ScheduleCommands
 {
 	Add
 	{
-		name: String
+		name: String,
+		start: DateTime,
+		end: DateTime
 	}
 }
 
