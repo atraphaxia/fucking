@@ -5,4 +5,5 @@ edition = "2024"
 
 [dependencies]
 clap = { version = "4.5.51", features = ["derive"] }
+gix = { version = "0.74.1", features = ["command"] }
 jiff = "0.2.16"
