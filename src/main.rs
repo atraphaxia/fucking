@@ -1,3 +1,4 @@
+use std::error::Error;
 use std::path::PathBuf;
 
 use clap::{Parser, Subcommand};
@@ -41,7 +42,22 @@ enum ScheduleCommands
 
 
 
-fn main()
+fn main() -> Result<(), Box<dyn Error>>
 {
 	let cli = Cli::parse();
+
+	match &cli.command
+	{
+		Commands::Initialize { path } =>
+		{
+			gix::init(path)?;
+		}
+
+		Commands::Schedule { command } =>
+		{
+			todo!();
+		}
+	}
+
+	Ok(())
 }
